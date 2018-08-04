@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>login</title>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+</head>
+<script>
+</script>
+
+<body>
+
+    <h1>数据库操作</h1>
+    <form action="/findAll"  method="get">
+    <input type="submit" id="submit0" value="查看全部"/>
+    </form>
+
+    <h4>查找一个id</h4>
+    <form action="/findid"  method="get">
+    <input type="number" id="findid" name="id"/>
+    <input type="submit" id="submit1" value="提交"/>
+    </form>
+
+    <h4>查找name关联的id</h4>
+    <form action="/findname"  method="get">
+    <input type="number" id="findname" name="name"/>
+        <input type="submit" id="submit2" value="提交"/>
+    </form>
+
+    <h4>修改一个id的name</h4>
+    <form action="/updateone"  method="get">
+   <input type="number" id="updid" name="id" placeholder="通过id修改"/><br/>
+    <input type="number" id="updname" name="name" placeholder="修改name"/>
+        <input type="submit" id="submit3" value="提交"/>
+    </form>
+
+    <h4>增加一个id</h4>
+    <form action="/saveone"  method="get">
+    <input type="number" id="addid" name="id" placeholder="添加id"/><br/>
+    <input type="number" id="addname" name="name" value="1" placeholder="添加name"/>
+        <input type="submit" id="submit4" value="提交"/>
+    </form>
+
+    <h4>删除一个id</h4>
+    <form action="/del"  method="get">
+    <input type="number" id="delname" name="delname"/>
+    <input type="submit" id="submit5" value="提交"/>
+    </form>
+
+
+</body>
+</html>

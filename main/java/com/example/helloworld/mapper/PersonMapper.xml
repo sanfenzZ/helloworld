@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mappper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.helloworld.mapper.PersonMapper">
+    <insert id="saveUser" >
+            INSERT INTO person VALUES(#{id},#{name})
+        </insert>
+    <select id="seletemap" parameterType="int" resultType="hashMap">
+        SELECT * from person where id = #{id}
+    </select>
+    <select id="seleteperson" parameterType="int" resultType="com.example.helloworld.Person.Person">
+        SELECT * from person where id = #{id}
+    </select>
+    <select id="seletepername" parameterType="int" resultType="com.example.helloworld.Person.Person">
+        SELECT * from person where name = #{name}
+    </select>
+    <resultMap id="resultmap" type="com.example.helloworld.Person.Person"> <!-- resultType="Map"-->
+       <!-- select * from nperson-->
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="seleteAll" resultType="com.example.helloworld.Person.Person" >
+        select * from person
+    </select>
+    <update id="modify" >
+      UPDATE person set name = #{name} where id=#{id}
+    </update>
+    <update id="modifyall" >
+      UPDATE person set id=#{id} ,name = #{name}  where id=#{oid}
+    </update>
+    <delete id="dele" parameterType="int">
+        delete from person where id=#{id}
+    </delete>
+</mapper>
+
+
